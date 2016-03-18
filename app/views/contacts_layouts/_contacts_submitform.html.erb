@@ -1,0 +1,13 @@
+<h3>Contact</h3>
+
+<%= form_for @contact do |c| %>
+    <h4><%= c.label :name, class: "label label-default" %> </h4>
+    <%= c.text_field :name, class: "contacttextfield" %>
+    <h4><%= c.label :email, class: "label label-default" %> </h4>
+    <%= c.text_field :email, class: "contacttextfield" %>
+    <h4><%= c.label :topic, class: "label label-default" %> </h4>
+    <%= c.select( :topic, [['Help','Help'],['Question','Question'],['Comment','Comment'],['Other', 'Other']], {}, { :class => "contactselect" } ) %>
+    <h4><%= c.label :info, class: "label label-default" %> </h4>
+    <%= c.text_area :info, class: "contacttextarea"  %> <br \>
+    <%= c.submit  "Submit", class: "btn btn-primary" %>
+<%end%>
