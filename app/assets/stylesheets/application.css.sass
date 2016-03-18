@@ -27,11 +27,15 @@ $link_color: #F5CB5C
 $background_color: #242423
 $border_color: #333533
 
+$default_font: 'Roboto Condensed', sans-serif
+$header_font: 'Passion One', sans-serif
+$brand_font: 'Raleway', sans-serif
+
 body
   background-color: $background_color
 
 *
-  font-family: 'Roboto Condensed', sans-serif
+  font-family: $default_font
 
 a
   color: $font_color !important
@@ -73,6 +77,25 @@ h3
   font-size: 14px
   border-radius: 4px
 
+.chatwindow
+  width: 100%
+  max-width: 100%
+  min-width: 100%
+  background-color: white !important
+  height: 512px
+  max-height: 512px
+  font-size: 14px
+  border-radius: 4px
+  overflow: auto
+
+chattext
+  color: black
+  margin: 4px
+
+.headers
+  font-size: 52px
+  font-family: $brand_font
+
 .back-to-top
   display: none
   width: 60px
@@ -95,7 +118,7 @@ h3
   color: $font_color !important
 
 .brand
-  font-family: 'Raleway', sans-serif
+  font-family: $brand_font
   font-size: 32px
   color: $link_color !important
 
@@ -103,6 +126,9 @@ h3
   background-color: $link_color !important
   color: $dark_font_color !important
   border-color: $border_color !important
+
+.btn-primary:hover
+  color: black !important
 
 .label-default
   background-color: $link_color !important

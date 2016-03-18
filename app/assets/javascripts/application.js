@@ -18,6 +18,13 @@
 
 var backToTopScrollAmount = 300;
 
+$(function () {
+    $('#chatwindow').on('click', function () {
+        $('<chattext>Text <br\></chattext>').appendTo('#chatwindow');
+        $('#chatwindow').scrollTop( $('#chatwindow')[0].scrollHeight );
+    });
+});
+
 $(window).scroll( function( ) {
    if( $(window).scrollTop( ) > backToTopScrollAmount ) {
        $(".back-to-top").fadeIn( 'slow' );

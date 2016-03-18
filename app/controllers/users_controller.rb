@@ -8,8 +8,8 @@ class UsersController < ApplicationController
       render :about
     elsif params[:id] == "support"
       render :support
-    elsif params[:id] == "contact"
-      render :contact
+    elsif params[:id] == "dashboard"
+      render :dashboard
     end
   end
 end
