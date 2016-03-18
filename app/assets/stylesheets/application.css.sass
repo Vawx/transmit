@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:800)
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed)
+
+$font_color: #E8EDDF
+$dark_font_color: #333533
+$font_hover_color: #CFDBD5
+$link_color: #F5CB5C
+$background_color: #242423
+$border_color: #333533
+
+body
+  background-color: $background_color
+
+*
+  font-family: 'Roboto Condensed', sans-serif
+
+a
+  color: $font_color !important
+
+p
+  color: $font_color !important
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid $border_color
+  margin: 1em 0
+  padding: 0
+
+h3
+  color: $link_color !important
+
+.back-to-top
+  display: none
+  width: 60px
+  height: 60px
+  text-indent: -9999px
+  position: fixed
+  z-index: 999
+  right: 40px
+  bottom: 40px
+  background: $link_color url("arrows.png") no-repeat center 50%
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+.index
+  color: $link_color !important
+  text-decoration: underline
+
+.index:hover
+  color: $font_color !important
+
+.brand
+  font-family: 'Raleway', sans-serif
+  font-size: 32px
+  color: $link_color !important
+
+.btn-primary
+  background-color: $link_color !important
+  color: $dark_font_color !important
+  border-color: $border_color !important
+
+.navbar-default
+  background-color: rgba( 0,0,0,0 )
+  border-color: rgba( 0,0,0,0 )
+
+.jumbotron
+  background-color: $border_color
