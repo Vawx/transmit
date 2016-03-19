@@ -19,7 +19,6 @@ class ModBotMain
   end
 
   define_method :recieve do |message|
-    puts "Recv: " + message
     controller.read
   end
 end

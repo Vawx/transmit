@@ -19,11 +19,12 @@
 var backToTopScrollAmount = 300;
 
 $(function () {
+    /*
     $('#chatwindow').on('click', function () {
         $('<chattext>Text <br\></chattext>').appendTo('#chatwindow');
         $('#chatwindow').scrollTop( $('#chatwindow')[0].scrollHeight );
     });
-
+    */
 
     $('.closebutton').on( 'click', function( ) {
         $('.errorbox').empty( );

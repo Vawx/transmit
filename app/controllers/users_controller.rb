@@ -1,6 +1,7 @@
 require './lib/assets/modbotmain'
 
 class UsersController < ApplicationController
+
   define_method :index do
     render :index
   end
@@ -10,7 +11,11 @@ class UsersController < ApplicationController
       render :about
     elsif params[:id] == "support"
       render :support
-    elsif params[:id] == "dashboard"
+    elsif params[:id]. == "dashboard"
+      Thread.new do
+        ModBotMain.new self
+      end
+      @message = "Welcome!"
       render :dashboard
     elsif params[:id] == "login"
       @user = User.new
@@ -29,7 +34,9 @@ class UsersController < ApplicationController
       @users. each do |u|
         if u.email == params[:user][:email]
           if u.password == params[:user][:password]
+            @message = "Welcome!"
             redirect_to user_path( "dashboard" )
+            return
           end
         end
       end
@@ -46,7 +53,12 @@ class UsersController < ApplicationController
   end
 
   define_method :read do |message|
-    puts message
+    puts "CONTROLLER:" + message
+    @message = Message.new
+    @message.from = "test"
+    @message.message = message
+    puts "NEW MESSAGE " + @message.message
+    message_path( @message )
   end
 
 private
