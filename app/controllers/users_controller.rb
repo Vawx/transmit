@@ -12,6 +12,9 @@ class UsersController < ApplicationController
       render :support
     elsif params[:id] == "dashboard"
       render :dashboard
+    elsif params[:id] == "login"
+      @user = User.new
+      render :login
     end
   end
 
@@ -21,11 +24,24 @@ class UsersController < ApplicationController
   end
 
   define_method :create do
-    @user = User.new user_params
-    if @user.save
-      redirect_to users_path
-    else
+    if params[:user][:name].class == NilClass
+      @users = User.all
+      @users. each do |u|
+        if u.email == params[:user][:email]
+          if u.password == params[:user][:password]
+            redirect_to user_path( "dashboard" )
+          end
+        end
+      end
+      @user = User.new
       render :new
+    else
+      @user = User.new user_params
+      if @user.save
+        redirect_to users_path
+      else
+        render :new
+      end
     end
   end
 
@@ -36,5 +52,9 @@ class UsersController < ApplicationController
 private
   define_method :user_params do
     params.require( :user ).permit( :name, :email, :password )
+  end
+
+  define_method :user_login_params do
+    params.require( :user ).permit( :email, :password )
   end
 end

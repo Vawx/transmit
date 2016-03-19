@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @user %>
+
+<%= form_for @user do |f| %>
+  <h4><%= f.label :email, class: "label label-default" %></h4>
+  <%= f.email_field :email, class: "contacttextfield" %>
+  <h4><%= f.label :password, class: "label label-default" %></h4>
+  <%= f.password_field :password, class: "contacttextfield" %><br \>
+  <%= f.submit  "Submit", class: "btn btn-primary" %>
+<%end%>
