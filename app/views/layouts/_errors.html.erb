@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+    <div class="errorbox">
+      <h3 style="display: inline;">Please fix these errors:</h3><a href="#" class="closebutton"></a>
+      <ul class="errors">
+        <% object.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

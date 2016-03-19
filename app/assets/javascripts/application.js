@@ -23,6 +23,11 @@ $(function () {
         $('<chattext>Text <br\></chattext>').appendTo('#chatwindow');
         $('#chatwindow').scrollTop( $('#chatwindow')[0].scrollHeight );
     });
+
+
+    $('.closebutton').on( 'click', function( ) {
+        $('.errorbox').empty( );
+    });
 });
 
 $(window).scroll( function( ) {
